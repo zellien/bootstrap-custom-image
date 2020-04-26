@@ -1,7 +1,7 @@
 {
-  "name": "bottstrap-custom-image",
+  "name": "bootstrap-custom-image",
   "version": "1.0.0",
-  "description": "## Photo gallery in a modal window with functions for loading images, creating folders and more...",
+  "description": "Photo gallery in a modal window with functions for loading images, creating folders and more...",
   "repository": "zellien/bootstrap-custom-image",
   "author": "zellien",
   "license": "ISC",
