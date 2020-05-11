@@ -4,6 +4,7 @@ Photo gallery in a modal window with functions for loading images, creating fold
 ## Usage
 ```html
 <div class="custom-image">
+    <input type="hidden" class="custom-image-input" name="image">
     <img class="custom-image-thumbnail" data-toggle="image" src="image-path.webp" alt="...">
     <button class="custom-image-clear">&times;</button>
 </div>
