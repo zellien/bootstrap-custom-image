@@ -65,6 +65,10 @@
                 src: self.options.placeholder,
                 alt: 'no image'
             });
+        }).on('click', 'button.custom-image-remove', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            $(self.element).remove();
         });
 
         toolbar.on('click', 'button[data-action=parent]', function (e) {
@@ -135,7 +139,7 @@
                 $.ajax(self.options.createUrl, {
                     type    : 'post',
                     data    : {csrf: self.token, name: value, directory: self.directory},
-                    success : function (result) {
+                    success: function () {
                         toolbar.find('button[data-action=create]').popover('hide');
                         self.loadingData();
                     },
