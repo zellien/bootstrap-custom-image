@@ -100,12 +100,14 @@
         }).on('change', 'input[name=custom-image-file]', function (e) {
             e.preventDefault();
             var form = new FormData();
-            form.append('image', e.currentTarget.files[0]);
+            form.append('filename', e.currentTarget.files[0]);
+            form.append('alternate', e.currentTarget.files[0].name.split('.').slice(0, -1).join('.'));
+            form.append('title', e.currentTarget.files[0].name.split('.').slice(0, -1).join('.'));
             form.append('directory', self.directory);
             form.append('csrf', self.token);
             $.ajax(self.options.uploadUrl, {
                 data       : form,
-                type       : 'POST',
+                type       : 'post',
                 cache      : false,
                 contentType: false,
                 processData: false,
@@ -272,13 +274,14 @@
                     .data('source', this['source'])
                     .addClass('custom-image-item'),
                 image   = $(document.createElement('img'))
-                    .addClass('custom-image-thumbnail')
-                    .attr('src', this['thumb'])
-                    .attr('alt', this['name']),
+                    .addClass('custom-image-thumbnail').attr({
+                        alt: this['alternate'],
+                        src: this['thumbnail'],
+                    }),
                 caption = $('<div>').attr({
                     class: 'custom-image-caption',
                     title: this.name
-                }).text(this['name']);
+                }).text(this['alternate']);
             if ($.fn.tooltip !== undefined) {
                 caption.tooltip();
             }

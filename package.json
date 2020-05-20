@@ -1,6 +1,6 @@
 {
   "name"           : "bootstrap-custom-image",
-  "version"        : "1.0.2",
+  "version"        : "1.0.3",
   "description"    : "Photo gallery in a modal window with functions for loading images, creating folders and more...",
   "repository"     : "zellien/bootstrap-custom-image",
   "author"         : "zellien",
